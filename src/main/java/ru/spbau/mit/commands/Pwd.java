@@ -1,5 +1,7 @@
 package ru.spbau.mit.commands;
 
+import ru.spbau.mit.utils.Environment;
+
 import java.io.*;
 import java.util.ArrayList;
 
@@ -19,7 +21,7 @@ public class Pwd implements Command {
         OutputStream out = new ByteArrayOutputStream();
         BufferedWriter outWriter = new BufferedWriter(new OutputStreamWriter(out));
 
-        outWriter.write(System.getProperty("user.dir"));
+        outWriter.write(Environment.getCurrentDir());
 
         outWriter.flush();
         return out;

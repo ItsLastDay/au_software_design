@@ -1,6 +1,7 @@
 package ru.spbau.mit.commands;
 
 import org.junit.Test;
+import ru.spbau.mit.utils.Environment;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -33,7 +34,7 @@ public class CatTest {
     public void testReadingFromFile() throws Exception {
         String filepath = "someFilename";
         String fileContent = "test\ntestTEST";
-        Path path = Paths.get(filepath);
+        Path path = Paths.get(Environment.getCurrentDir(), filepath).toAbsolutePath();
         if (Files.exists(path)) {
             fail();
         }
