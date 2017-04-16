@@ -40,7 +40,7 @@ public class Cd implements Command {
             throw new IOException("Target is not a directory: " + newPath.toString());
         }
 
-        System.setProperty("user.dir", newPath.toString());
+        Environment.setCurrentDir(newPath.toString());
 
         outWriter.flush();
         return out;

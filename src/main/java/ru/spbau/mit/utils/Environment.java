@@ -42,4 +42,11 @@ public final class Environment {
     public static String getCurrentDir() {
         return System.getProperty("user.dir");
     }
+
+    /**
+     * set new current directory
+     */
+    public static void setCurrentDir(String newDir) {
+        System.setProperty("user.dir", newDir);
+    }
 }

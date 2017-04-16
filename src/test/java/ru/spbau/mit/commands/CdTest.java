@@ -24,7 +24,7 @@ public class CdTest {
 
     @After
     public void restore() {
-        System.setProperty("user.dir", currentDir);
+        Environment.setCurrentDir(currentDir);
     }
 
     @Test
