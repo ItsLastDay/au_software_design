@@ -1,5 +1,7 @@
 package ru.spbau.mit.commands;
 
+import ru.spbau.mit.utils.Environment;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -31,7 +33,7 @@ public class Cat implements Command {
 
         if (arguments.size() > 0) {
             filepath = arguments.get(0);
-            Path path = Paths.get(filepath);
+            Path path = Paths.get(Environment.getCurrentDir(), filepath).toAbsolutePath();
             if (!Files.exists(path)) {
                 throw new FileNotFoundException("File " + path + " does not exist.");
             }

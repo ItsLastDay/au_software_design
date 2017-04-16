@@ -1,5 +1,7 @@
 package ru.spbau.mit.commands;
 
+import ru.spbau.mit.utils.Environment;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -43,7 +45,7 @@ public class Wc implements Command {
 
         if (arguments.size() > 0) {
             String filename = arguments.get(0);
-            Path path = Paths.get(filename);
+            Path path = Paths.get(Environment.getCurrentDir(), filename).toAbsolutePath();
             if (!Files.exists(path)) {
                 throw new FileNotFoundException("File " + path + " does not exist.");
             }

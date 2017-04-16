@@ -19,6 +19,10 @@ public class CommandFactory {
                 return new Assignment(rawCommand.getArguments());
             case "exit":
                 return new Exit(rawCommand.getArguments());
+            case "cd":
+                return new Cd(rawCommand.getArguments());
+            case "ls":
+                return new Ls(rawCommand.getArguments());
             default:
                 ArrayList<String> args = new ArrayList<>();
                 args.add(rawCommand.getCommandName());

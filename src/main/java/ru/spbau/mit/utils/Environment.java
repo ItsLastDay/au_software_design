@@ -35,4 +35,11 @@ public final class Environment {
     public String getVarValue(String varName) {
         return environment.get(varName);
     }
+
+    /**
+     * returns current directory
+     */
+    public static String getCurrentDir() {
+        return System.getProperty("user.dir");
+    }
 }
